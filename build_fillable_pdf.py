@@ -110,10 +110,10 @@ def _build_base_pdf():
     # -----------------------------------------------------------------------
     # HEADER
     # -----------------------------------------------------------------------
-    panda_font, panda_sz = "Helvetica-Bold", 38
+    panda_font, panda_sz = "Times-Bold", 40
     c.setFont(panda_font, panda_sz)
     letters = list("PANDA")
-    extra_gap = 10
+    extra_gap = 7
     lwidths = [c.stringWidth(ch, panda_font, panda_sz) for ch in letters]
     total_w = sum(lwidths) + extra_gap * (len(letters) - 1)
     px = (PAGE_W - total_w) / 2
@@ -122,9 +122,9 @@ def _build_base_pdf():
         c.drawString(px, py, ch)
         px += lwidths[i] + extra_gap
 
-    c.setFont("Helvetica", 7.5)
+    c.setFont("Times-Roman", 7.5)
     condo_str = "C O N D O M I N I U M S"
-    condo_w = c.stringWidth(condo_str, "Helvetica", 7.5)
+    condo_w = c.stringWidth(condo_str, "Times-Roman", 7.5)
     c.drawString((PAGE_W - condo_w) / 2, PAGE_H - 83, condo_str)
 
     # -----------------------------------------------------------------------
